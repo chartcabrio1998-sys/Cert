@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Fotografía | Carlos Rodas</title>
+  <link rel="stylesheet" href="diseño.css">
+</head>
+<body>
+
+<header>
+  <a href="index.html">← Volver</a>
+</header>
+
+<section class="work">
+  <div class="gallery">
+    <figure><img src="diseñouno.png" alt=""><figcaption>Post para festival de cine.</figcaption></figure>
+    <figure><img src="diseñodos.png" alt=""><figcaption>Mock up • Post festival de cine</figcaption></figure>
+    <figure><img src="diseñotres.jpg" alt=""><figcaption>Post Red Bull</figcaption></figure>
+    <figure><img src="diseñocuatro.jpg" alt=""><figcaption>Post Zoologico La Aurora</figcaption></figure>
+    <figure><img src="diseñocinco.jpg" alt=""><figcaption>Dibujos para cuento interactivo</figcaption></figure>
+    <figure><img src="diseñoseis.jpg" alt=""><figcaption>Dibujos para cuento interactivo</figcaption></figure>
+  </div>
+</section>
+
+<div class="section-footer">
+  <p class="footer-text">
+    Cada imagen es parte de una historia más grande.
+  </p>
+  <div class="footer-links">
+    <a href="#top">Volver al inicio</a>
+    <span>·</span>
+    <a href="index.html">Ver otras sesiones</a>
+  </div>
+</div>
+
+
+<div class="lightbox" id="lightbox">
+  <img src="" alt="">
+</div>
+
+<script>
+  const images = document.querySelectorAll('.gallery img');
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = lightbox.querySelector('img');
+
+  images.forEach(img => {
+    img.addEventListener('click', () => {
+      lightboxImg.src = img.src;
+      lightbox.style.display = 'flex';
+    });
+  });
+
+  lightbox.addEventListener('click', () => {
+    lightbox.style.display = 'none';
+  });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Fotografía | Carlos Rodas</title>
+  <link rel="stylesheet" href="visual.css">
+</head>
+<body>
+
+<header>
+  <a href="index.html">← Volver</a>
+</header>
+
+<section class="work">
+  <h2>Contenido visual</h2>
+
+  <div class="gallery video-gallery">
+    <figure><video src="videouno.mp4" muted loop playsinline></video><figcaption>Video cinemático · Lifestyle</figcaption></figure>
+    <figure><video src="videodos.mp4" muted loop playsinline></video><figcaption>Partido · Lifestyle</figcaption></figure>
+    <figure><video src="videotres.mp4" muted loop playsinline></video><figcaption>San Vicente Pacaya · Lifestyle</figcaption></figure>
+    <figure><video src="videocuatroo.mp4" muted loop playsinline></video><figcaption>San Vicente Pacaya · Lifestyle</figcaption></figure>
+    <figure><video src="videocincoo.mp4" muted loop playsinline></video><figcaption>Final torneo · Lifestyle</figcaption></figure>
+    <figure><video src="videoseis.mp4" muted loop playsinline></video><figcaption>XTZ · Movimiento</figcaption></figure>
+
+    
+  </div>
+</section>
+
+<div class="section-footer">
+  <p class="footer-text">
+    Cada imagen es parte de una historia más grande.
+  </p>
+  <div class="footer-links">
+    <a href="#top">Volver al inicio</a>
+    <span>·</span>
+    <a href="index.html">Ver otras sesiones</a>
+  </div>
+</div>
+
+<div class="video-lightbox" id="videoLightbox">
+  <video controls></video>
+</div>
+
+<script>
+  const previewVideos = document.querySelectorAll('.video-gallery video');
+  const videoLightbox = document.getElementById('videoLightbox');
+  const lightboxVideo = videoLightbox.querySelector('video');
+
+  function stopAllVideos() {
+    previewVideos.forEach(v => {
+      v.pause();
+      v.currentTime = 0;
+    });
+    lightboxVideo.pause();
+    lightboxVideo.currentTime = 0;
+  }
+
+  previewVideos.forEach(video => {
+
+    // Hover preview
+    video.addEventListener('mouseenter', () => {
+      stopAllVideos();
+      video.play();
+    });
+
+    video.addEventListener('mouseleave', () => {
+      video.pause();
+      video.currentTime = 0;
+    });
+
+    // Click = abrir video grande
+    video.addEventListener('click', (e) => {
+      e.stopPropagation();
+      stopAllVideos();
+
+      lightboxVideo.src = video.currentSrc;
+      videoLightbox.style.display = 'flex';
+      lightboxVideo.play();
+    });
+
+  });
+
+  // Cerrar lightbox
+  videoLightbox.addEventListener('click', () => {
+    stopAllVideos();
+    lightboxVideo.removeAttribute('src');
+    videoLightbox.style.display = 'none';
+  });
+</script>
+
+
+
+<div class="video-lightbox" id="videoLightbox">
+  <video controls></video>
+</div>
+
+</body>
+</html>

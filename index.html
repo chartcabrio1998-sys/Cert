@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carlos Rodas | Portafolio</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <section id="hero">
+  <div class="hero-content">
+    <h1>Carlos Rodas</h1>
+    <p>
+      <a href="fotografia.html">Fotografía</a> ·
+      <a href="diseños.html">Diseño</a> ·
+      <a href="contenidovisual.html">Contenido visual</a>
+    </p>
+  </div>
+</section>
+
+<section id="work">
+  <h2>Trabajos</h2>
+  <div class="gallery">
+    <figure><img src="artuno.jpg" alt=""></figure>
+    <figure><img src="artdos.jpg" alt=""></figure>
+    <figure><img src="arttres.jpg" alt=""></figure>
+    <figure><img src="artcuatro.jpg" alt=""></figure>
+    <figure><img src="artcinco.jpg" alt=""></figure>
+    <figure><img src="artseis.jpg" alt=""></figure>
+    <figure><img src="artsiete.jpg" alt=""></figure>
+    <figure><img src="artocho.jpg" alt=""></figure>
+    <figure><img src="artnueve.jpg" alt=""></figure>
+    <figure><img src="artdies.jpg" alt=""></figure>
+    <figure><img src="artonce.jpg" alt=""></figure>
+    <figure><img src="artdoce.jpg" alt=""></figure>
+
+
+    <!-- seguí para cada foto -->
+  </div>
+</section>
+
+<section id="contact">
+  <h2>Contacto</h2>
+
+  <p>
+    ¿Tenés una idea, marca o proyecto en mente?<br>
+    Me interesa colaborar en propuestas visuales auténticas.
+  </p>
+
+  <p>
+    📩 <a href="mailto:carlosrodas5809@gmail.com">carlosrodas5809@gmail.com</a><br>
+   📸 <a href="https://instagram.com/ojosdsuenio/" target="_blank">
+Escribime por Instagram
+</a>
+
+  </p>
+</section>
+
+
+<div class="lightbox" id="lightbox">
+  <img src="" alt="">
+</div>
+
+<script>
+  const images = document.querySelectorAll('.gallery img');
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = lightbox.querySelector('img');
+
+  images.forEach(img => {
+    img.addEventListener('click', () => {
+      lightboxImg.src = img.src;
+      lightbox.style.display = 'flex';
+    });
+  });
+
+  lightbox.addEventListener('click', () => {
+    lightbox.style.display = 'none';
+  });
+</script>
+
+</body>
+</html>

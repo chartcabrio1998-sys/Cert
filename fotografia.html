@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Fotografía | Carlos Rodas</title>
+  <link rel="stylesheet" href="photo.css">
+</head>
+<body>
+
+<header>
+  <a href="index.html">← Volver</a>
+</header>
+
+<section class="work">
+    <H2>Blanco y Negro</H2>
+  <div class="gallery">
+    <figure><img src="bnuno.jpg" alt=""><figcaption>El alboroto en medio de todo el festejo · Luz natural</figcaption></figure>
+    <figure><img src="bndos.jpg" alt=""><figcaption>Fotografía urbana · Blanco y negro</figcaption></figure>
+    <figure><img src="bntres.jpg" alt=""><figcaption>Arte en todos nuestros momentos cotidianos · Blanco y negro</figcaption></figure>
+    <figure><img src="bncuatro.jpg" alt=""><figcaption>Flores que crecen en medio del caos · Blanco y negro</figcaption></figure>
+    <figure><img src="bncinco.jpg" alt=""><figcaption>Soledad · Blanco y negro</figcaption></figure>
+    <figure><img src="bnseis.jpg" alt=""><figcaption>Hermosa naturaleza · Blanco y negro</figcaption></figure>
+
+  </div>
+</section>
+
+<section class="work">
+    <H2>RETRATOS</H2>
+  <div class="gallery">
+    <figure><img src="retratouno.jpg" alt=""><figcaption>Las miradas hablan mucho antes que la boca · Luz natural</figcaption></figure>
+    <figure><img src="retratodos.jpg" alt=""><figcaption>Flores · Retrato</figcaption></figure>
+    <figure><img src="retratotres.jpg" alt=""><figcaption>Retrato con luz natural · Retrato</figcaption></figure>
+    <figure><img src="retratocuatro.jpg" alt=""><figcaption>Neon Artistico · Retrato</figcaption></figure>
+    <figure><img src="retratocinco.jpg" alt=""><figcaption>Retrato a 35mm · Retrato</figcaption></figure>
+    <figure><img src="retratoseis.jpg" alt=""><figcaption>Noche · Retrato</figcaption></figure>
+
+  </div>
+</section>
+
+<section class="work">
+    <H2>PAISAJES</H2>
+  <div class="gallery">
+    <figure><img src="paisajeuno.jpg" alt=""><figcaption>Flores · Paisaje</figcaption></figure>
+    <figure><img src="paisajedos.jpg" alt=""><figcaption>Amanecer · Paisaje</figcaption></figure>
+    <figure><img src="paisajetres.jpg" alt=""><figcaption>Flores · Paisaje</figcaption></figure>
+    <figure><img src="paisajecuatro.jpg" alt=""><figcaption>Volcan Pacaya · Paisaje</figcaption></figure>
+    <figure><img src="paisajecinco.jpg" alt=""><figcaption>Lago de Amatitlán · Paisaje</figcaption></figure>
+    <figure><img src="paisajeseis.jpg" alt=""><figcaption>Flores del Volcan · Paisaje</figcaption></figure>
+
+  </div>
+</section>
+
+<div class="section-footer">
+  <p class="footer-text">
+    Cada imagen es parte de una historia más grande.
+  </p>
+  <div class="footer-links">
+    <a href="#top">Volver al inicio</a>
+    <span>·</span>
+    <a href="index.html">Ver otras sesiones</a>
+  </div>
+</div>
+
+<div class="lightbox" id="lightbox">
+  <img src="" alt="">
+</div>
+
+<script>
+  const images = document.querySelectorAll('.gallery img');
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = lightbox.querySelector('img');
+
+  images.forEach(img => {
+    img.addEventListener('click', () => {
+      lightboxImg.src = img.src;
+      lightbox.style.display = 'flex';
+    });
+  });
+
+  lightbox.addEventListener('click', () => {
+    lightbox.style.display = 'none';
+  });
+</script>
+
+</body>
+</html>
